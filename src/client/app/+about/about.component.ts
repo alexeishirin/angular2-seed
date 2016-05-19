@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   moduleId: module.id,
   selector: 'sd-about',
   templateUrl: 'about.component.html',
-  styleUrls: ['about.component.css']
+  styleUrls: ['about.component.scss']
 })
 /**
  * This class represents the lazy loaded AboutComponent.

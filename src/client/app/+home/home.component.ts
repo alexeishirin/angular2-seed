@@ -7,7 +7,7 @@ import { NameListService } from '../shared/index';
   moduleId: module.id,
   selector: 'sd-home',
   templateUrl: 'home.component.html',
-  styleUrls: ['home.component.css'],
+  styleUrls: ['home.component.scss'],
   directives: [FORM_DIRECTIVES]
 })
 /**

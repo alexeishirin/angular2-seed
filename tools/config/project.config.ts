@@ -22,5 +22,12 @@ export class ProjectConfig extends SeedConfig {
     const seedDependencies = this.NPM_DEPENDENCIES;
 
     this.NPM_DEPENDENCIES = seedDependencies.concat(additional_deps);
+
+    this.CSS_PROD_BUNDLE = 'main.css';
+
+    this.APP_ASSETS = [
+      //...
+      { src: `${this.ASSETS_SRC}/main.scss`, inject: true }, // renamed SASS file
+    ];
   }
 }
