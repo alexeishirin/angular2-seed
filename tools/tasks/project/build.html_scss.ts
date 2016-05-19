@@ -5,7 +5,7 @@ import * as gulpLoadPlugins from 'gulp-load-plugins';
 import * as merge from 'merge-stream';
 import { join } from 'path';
 
-import {DEPENDENCIES, APP_SRC, TMP_DIR, CSS_DEST, APP_DEST, BROWSER_LIST, ENV} from '../../config';
+import {DEPENDENCIES, APP_SRC, TMP_DIR, CSS_DEST, APP_DEST, BROWSER_LIST, ENV, CSS_PROD_BUNDLE} from '../../config';
 
 const plugins = <any>gulpLoadPlugins();
 const cleanCss = require('gulp-clean-css');
@@ -55,6 +55,8 @@ function processExternalScss() {
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass({includePaths: ['./node_modules/']}).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
+    // .pipe(isProd ? plugins.concatCss(CSS_PROD_BUNDLE) : plugins.util.noop())
+    // .pipe(isProd ? cleanCss() : plugins.util.noop())
     .pipe(plugins.sourcemaps.write(isProd ? '.' : ''))
     .pipe(gulp.dest(CSS_DEST));
 }
