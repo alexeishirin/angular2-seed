@@ -132,10 +132,10 @@ gulp.task('test', (done: any) =>
 // Serve dev
 gulp.task('dev', (done: any) =>
   runSequence('build.dev',
+    'server.start',
+    'watch.dev',
     'build.dev.server',
-    'my.server.start',
-    'my.server.browser.sync',
-    'my.watch.dev',
+    'nodemon.dev.server',
     done));
 
 // Build prod
