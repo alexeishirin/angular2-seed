@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { NameListService } from '../shared/index';
 import {MATERIAL_DIRECTIVES, ITableSelectionChange} from 'ng2-material';
 import {MdToolbar} from '@angular2-material/toolbar';
+import {Material} from "../../../models/material.model";
 
 @Component({
   moduleId: module.id,
@@ -20,15 +21,15 @@ export class HomeComponent {
   newName: string;
   selection: string;
   count: number;
-  materials: Array<any> = [
-    {'id': 1, 'name': 'Acrylic (Transparent)', 'quantity': '25', 'price': '$2.90'},
-    {'id': 2, 'name': 'Plywood (Birch)', 'quantity': '50', 'price': '$1.25'},
-    {'id': 3, 'name': 'Laminate (Gold on Blue)', 'quantity': '10', 'price': '$2.35'}
+  materials: Array<Material> = [
+    {'_id': "1", 'name': 'Acrylic (Topt)', 'quantity': 25, 'price': 2.90},
+    {'_id': "2", 'name': 'Plywood (Birch)', 'quantity': 50, 'price': 1.25},
+    {'_id': "3", 'name': 'Laminate (Gold on Blue)', 'quantity': 10, 'price': 2.35}
   ];
   change(data: ITableSelectionChange) {
-    let names = [];
-    this.materials.forEach((mat: any) => {
-      if (data.values.indexOf(mat.id) !== -1) {
+    let names : Array<string> = [];
+    this.materials.forEach((mat: Material) => {
+      if (data.values.indexOf(mat._id) !== -1) {
         names.push(mat.name);
       }
     });

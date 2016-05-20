@@ -24,6 +24,15 @@ gulp.task('build.dev', (done: any) =>
               done));
 
 // --------------
+// Build dev server.
+gulp.task('build.dev.server', (done: any) =>
+  runSequence(
+//              'tslint',
+    'build.js.dev.server',
+    done));
+
+
+// --------------
 // Build dev watch.
 gulp.task('build.dev.watch', (done: any) =>
   runSequence('build.dev',
@@ -119,3 +128,21 @@ gulp.task('test', (done: any) =>
   runSequence('build.test',
               'karma.start',
               done));
+
+// Serve dev
+gulp.task('dev', (done: any) =>
+  runSequence('build.dev',
+    'build.dev.server',
+    'my.server.start',
+    'my.server.browser.sync',
+    'my.watch.dev',
+    done));
+
+// Build prod
+gulp.task('prod', (done: any) =>
+  runSequence('build.prod',
+    'build.prod.server',
+    'my.server.start',
+    'my.server.browser.sync',
+    'my.watch.dev',
+    done));

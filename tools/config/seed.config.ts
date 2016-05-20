@@ -109,6 +109,13 @@ export class SeedConfig {
   APP_CLIENT = argv['client'] || 'client';
 
   /**
+   * The directory where the server files are located.
+   * The default directory is `server`.
+   * @type {string}
+   */
+  APP_SERVER = argv['server'] || 'server';
+
+  /**
    * The bootstrap file to be used to boot the application.
    * The file to be used is dependent if the hot-loader option is used or not.
    * Per default (non hot-loader mode) the `main.ts` file will be used, with the
@@ -129,6 +136,12 @@ export class SeedConfig {
    * @type {string}
    */
   APP_SRC = `src/${this.APP_CLIENT}`;
+
+  /**
+   * The base folder of the applications source files.
+   * @type {string}
+   */
+  SERVER_SRC = `src/${this.APP_SERVER}`;
 
   /**
    * The folder of the applications asset files.
@@ -178,6 +191,18 @@ export class SeedConfig {
   PROD_DEST = `${this.DIST_DIR}/prod`;
 
   /**
+   * The folder for built server files in the `dev` environment.
+   * @type {string}
+   */
+  DEV_SERVER_DEST = `${this.DIST_DIR}/server/dev`;
+
+  /**
+   * The folder for the built server files in the `prod` environment.
+   * @type {string}
+   */
+  PROD_SERVER_DEST = `${this.DIST_DIR}/server/prod`;
+
+  /**
    * The folder for temporary files.
    * @type {string}
    */
@@ -188,6 +213,12 @@ export class SeedConfig {
    * @type {string}
    */
   APP_DEST = this.ENV === ENVIRONMENTS.DEVELOPMENT ? this.DEV_DEST : this.PROD_DEST;
+
+  /**
+   * The folder for the built files, corresponding to the current environment.
+   * @type {string}
+   */
+  SERVER_DEST = this.ENV === ENVIRONMENTS.DEVELOPMENT ? this.DEV_SERVER_DEST : this.PROD_SERVER_DEST;
 
   /**
    * The folder for the built CSS files.
