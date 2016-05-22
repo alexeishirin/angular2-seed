@@ -322,6 +322,7 @@ export class SeedConfig {
       `${this.APP_BASE}node_modules/**/package.json`,
       `${this.APP_BASE}node_modules/@angular/*/package.json`,
       `${this.APP_BASE}node_modules/@angular2-material/*/package.json`,
+      `${this.APP_BASE}node_modules/ng2-material/package.json`
     ],
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
@@ -413,7 +414,7 @@ export class SeedConfig {
 
   /**
    * The BrowserSync configuration of the application.
-   * The default open behavior is to open the browser, 
+   * The default open behavior is to open the browser,
    * To prevent the browser from opening
    * `--b`  flag when running `npm start` (tested with serve.dev)
    * example `npm start -- --b`

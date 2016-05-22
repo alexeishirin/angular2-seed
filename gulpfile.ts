@@ -138,6 +138,9 @@ gulp.task('dev', (done: any) =>
     'nodemon.dev.server',
     done));
 
+gulp.task('create.component', (done: any) =>
+runSequence('copy.template.component', done));
+
 // Build prod
 gulp.task('prod', (done: any) =>
   runSequence('build.prod',
