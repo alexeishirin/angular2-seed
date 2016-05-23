@@ -1,1 +1,0 @@
-{"version":3,"file":"toolbar.component.js","sourceRoot":"","sources":["toolbar.component.ts"],"names":[],"mappings":";;;;;;;AAAA,qBAA0B,eAAe,CAAC,CAAA;AAW1C;IAAA;IAA+B,CAAC;IAThC;QAAC,gBAAS,CAAC;YACT,QAAQ,EAAE,MAAM,CAAC,EAAE;YACnB,QAAQ,EAAE,YAAY;YACtB,WAAW,EAAE,wBAAwB;YACrC,SAAS,EAAE,CAAC,uBAAuB,CAAC;SACrC,CAAC;wBAAA;IAI6B,uBAAC;AAAD,CAAC,AAAhC,IAAgC;AAAnB,wBAAgB,mBAAG,CAAA"}
