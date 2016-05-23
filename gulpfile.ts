@@ -31,6 +31,14 @@ gulp.task('build.dev.server', (done: any) =>
     'build.js.dev.server',
     done));
 
+// Build dev server.
+gulp.task('build.prod.server', (done: any) =>
+  runSequence(
+//              'tslint',
+    'build.js.prod.server',
+    done));
+
+
 
 // --------------
 // Build dev watch.
@@ -134,6 +142,7 @@ gulp.task('dev', (done: any) =>
   runSequence('build.dev',
     'server.start',
     'watch.dev',
+    'watch.models',
     'build.dev.server',
     'nodemon.dev.server',
     done));
@@ -145,7 +154,6 @@ runSequence('copy.template.component', done));
 gulp.task('prod', (done: any) =>
   runSequence('build.prod',
     'build.prod.server',
-    'my.server.start',
-    'my.server.browser.sync',
-    'my.watch.dev',
+    'copy.package',
+    'copy.proc.file',
     done));

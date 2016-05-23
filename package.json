@@ -1,5 +1,6 @@
 {
   "name": "angular2-seed",
+  "main": "server/server.js",
   "version": "0.0.0",
   "description": "Modular seed project for Angular 2 apps with fast, statically typed build",
   "repository": {
@@ -147,5 +148,8 @@
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.26",
     "zone.js": "^0.6.12"
+  },
+  "engines" : {
+    "node": "6.x.x"
   }
 }

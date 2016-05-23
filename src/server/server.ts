@@ -1,7 +1,7 @@
 import express = require('express');
 import path = require('path');
 import {Material} from './mongooseModels/material.mongoose.model';
-var port: number = 8080;
+var port: number = process.env.PORT || 8080;
 var app = express();
 var compression = require('compression');
 var mongoose = require('mongoose');
@@ -13,8 +13,7 @@ mongoose.connect('mongodb://localhost/angular-test');
 app.use(compression());
 app.use(bodyParser.urlencoded({'extended': 'true'}));            // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());
-app.use(express.static(path.resolve(process.cwd(), '')));
-app.use(express.static(path.resolve(process.cwd(), 'dist/dev/')));
+app.use(express.static(path.resolve(process.cwd(), 'client/')));
 
 var renderIndex = (req: express.Request, res: express.Response) => {
     res.sendFile(path.resolve(process.cwd(), 'dist/dev/index.html'));

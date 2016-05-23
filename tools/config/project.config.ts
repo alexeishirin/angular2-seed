@@ -12,6 +12,7 @@ const proxy = require('proxy-middleware');
 export class ProjectConfig extends SeedConfig {
 
   PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
+  PROD_DEST_ROOT = `${this.DIST_DIR}/prod`;
 
   constructor() {
     super();
@@ -53,7 +54,7 @@ export class ProjectConfig extends SeedConfig {
 
     this.APP_ASSETS = [
       //...
-      { src: `${this.ASSETS_SRC}/main.scss`, inject: true }, // renamed SASS file
+      { src: `${this.CSS_SRC}/main.scss`, inject: true, vendor: false }, // renamed SASS file
     ];
   }
 }

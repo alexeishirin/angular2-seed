@@ -3,7 +3,7 @@ import * as gulpLoadPlugins from 'gulp-load-plugins';
 import { join } from 'path';
 import * as slash from 'slash';
 
-import {APP_SRC, APP_DEST, APP_BASE, DEPENDENCIES, CSS_DEST, ASSETS_SRC} from '../../config';
+import {APP_SRC, APP_DEST, APP_BASE, DEPENDENCIES, CSS_SRC, CSS_DEST, ASSETS_SRC} from '../../config';
 
 import { templateLocals } from '../../utils';
 
@@ -58,7 +58,7 @@ function mapPath(dep: any) {
 
   if (envPath.startsWith(APP_SRC) && envPath.endsWith('.scss')) {
     envPath = envPath
-      .replace(ASSETS_SRC, CSS_DEST)
+      .replace(CSS_SRC, CSS_DEST)
       .replace('.scss', '.css');
   }
 

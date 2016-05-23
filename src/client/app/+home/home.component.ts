@@ -18,7 +18,7 @@ import { NameListService } from '../shared/index';
 export class HomeComponent {
 
   materials: Array<any> = [
-    {'id': 1, 'name': 'Acrylic (Transp)', 'quantity': '25', 'price': '$2.90'},
+    {'id': 1, 'name': 'Ac (Transp)', 'quantity': '25', 'price': '$2.90'},
     {'id': 2, 'name': 'Plywood (Birch)', 'quantity': '50', 'price': '$1.25'},
     {'id': 3, 'name': 'Laminate (Gold on Blue)', 'quantity': '10', 'price': '$2.35'}
   ]

@@ -188,7 +188,7 @@ export class SeedConfig {
    * The folder for the built files in the `prod` environment.
    * @type {string}
    */
-  PROD_DEST = `${this.DIST_DIR}/prod`;
+  PROD_DEST = `${this.DIST_DIR}/prod/client`;
 
   /**
    * The folder for built server files in the `dev` environment.
@@ -200,7 +200,7 @@ export class SeedConfig {
    * The folder for the built server files in the `prod` environment.
    * @type {string}
    */
-  PROD_SERVER_DEST = `${this.DIST_DIR}/server/prod`;
+  PROD_SERVER_DEST = `${this.DIST_DIR}/prod/server`;
 
   /**
    * The folder for temporary files.
@@ -391,6 +391,38 @@ export class SeedConfig {
         defaultExtension: 'js'
       },
       'rxjs': {
+        defaultExtension: 'js'
+      },
+      '@angular2-material/checkbox': {
+        main: 'checkbox.js',
+        defaultExtension: 'js'
+      },
+      '@angular2-material/core': {
+        main: 'core.js',
+        defaultExtension: 'js'
+      },
+      '@angular2-material/progress-bar': {
+        main: 'progress-bar.js',
+        defaultExtension: 'js'
+      },
+      '@angular2-material/progress-circle': {
+        main: 'progress-circle.js',
+        defaultExtension: 'js'
+      },
+      '@angular2-material/radio': {
+        main: 'radio.js',
+        defaultExtension: 'js'
+      },
+      '@angular2-material/sidenav': {
+        main: 'sidenav.js',
+        defaultExtension: 'js'
+      },
+      '@angular2-material/toolbar': {
+        main: 'toolbar.js',
+        defaultExtension: 'js'
+      },
+      'ng2-material': {
+        main: 'index.js',
         defaultExtension: 'js'
       }
     }
